@@ -2,6 +2,7 @@
 
 https://github.com/IBM/quantum-careers/tree/master/challenges/frontend
 
+```
 git clone git@github.com:jebasile/pokedex.git .
 git add python
 git commit -m "Add python code"
@@ -13,3 +14,4 @@ git push
 git stash
 git pull
 git stash pop
+```
