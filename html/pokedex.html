@@ -17,8 +17,17 @@
             console.log("Got here 2");
             const response = await axios.get( URL );
     		console.log( "%o", response.data);
-    //		console.log( "%o", response.data.properties.periods[0]);
-    //		console.log( "%o", response.data.properties.periods[0].detailedForecast);
+    		console.log( "%o", response.data.items);
+
+            let itemLen = response.data.items.length
+            let text = "<ul>";
+            for (let i = 0; i < itemLen; i++) {
+                text += "<li>" + response.data.items[i].name + "</li>";
+            }
+            text += "</ul>";
+            console.log(text);
+            var x = document.getElementById( 'theData' );
+            x.innerHTML = text;
             //x.innerHTML = response.data.properties.periods[0].name + ": " + response.data.properties.periods[0].detailedForecast;
         } catch (error) {
 		    console.error(error);
