@@ -21,3 +21,8 @@ git stash pop
 ```
 curl -kX 'GET'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon/'   -H 'accept: application/json'
 ```
+
+```You can at most 20 at one time with
+……./api/rest/pokemon?limit=20
+```
+
