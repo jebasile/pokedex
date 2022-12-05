@@ -20,6 +20,14 @@ git stash pop
 
 ```
 curl -kX 'GET'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon/'   -H 'accept: application/json'
+
+curl -kX 'GET'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon/002'   -H 'accept: application/json'
+
+curl -kX 'GET'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon?limit=3'   -H 'accept: application/json'
+
+curl -kX 'GET'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon?limit=3&offset=5'   -H 'accept: application/json'
+
+Make sure these are vanilla single quotes
 ```
 
 ```You can at most 20 at one time with
