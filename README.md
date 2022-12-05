@@ -23,6 +23,9 @@ curl -kX 'GET'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomai
 ```
 
 ```You can at most 20 at one time with
+You can at most 20 at one time with
 ……./api/rest/pokemon?limit=20
+Then you can add in offset 
+ ……/rest/pokemon?limit=20&offset=20
 ```
 
