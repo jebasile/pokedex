@@ -15,3 +15,5 @@ git stash
 git pull
 git stash pop
 ```
+
+```file:////Users/jenniferbasile/Documents/GitHub/getWeather/html/pokedex.html```
