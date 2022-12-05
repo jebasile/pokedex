@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pokedex</title>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+
+    var URL="https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/rest/pokemon"
+    var URL002="https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/rest/pokemon/002"
+
+	console.log("Got here 1");
+
+	async function getPokedex() {
+	    try {
+            console.log("Got here 2");
+            const response = await axios.get( URL );
+    		console.log( "%o", response.data);
+    //		console.log( "%o", response.data.properties.periods[0]);
+    //		console.log( "%o", response.data.properties.periods[0].detailedForecast);
+            //x.innerHTML = response.data.properties.periods[0].name + ": " + response.data.properties.periods[0].detailedForecast;
+        } catch (error) {
+		    console.error(error);
+	    }
+	}
+
+       //getWeather();
+       // console.log( "---%o", weatherInfo )
+	
+    </script>
+
+
+	
+
+    
+</head>
+
+<body>
+    <button type="button" onclick="getPokedex()">Get pokedex</button>
+
+    <h1>Pokedex</h1>
+        <h3>Details</h3>
+        <p id=theData> </p>
+        <p id=theData2> </p>
+        <p id=theData3> </p>
+</body>
+
+</html>
