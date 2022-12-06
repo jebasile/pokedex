@@ -26,7 +26,7 @@
             }
             text += "</ul>";
             console.log(text);
-            var x = document.getElementById( 'theData' );
+            var x = document.getElementById( 'theDataLeft' );
             x.innerHTML = text;
             //x.innerHTML = response.data.properties.periods[0].name + ": " + response.data.properties.periods[0].detailedForecast;
         } catch (error) {
@@ -34,8 +34,28 @@
 	    }
 	}
 
-       //getWeather();
-       // console.log( "---%o", weatherInfo )
+	async function getPokemonDetails() {
+	    try {
+            console.log("Got here 3");
+            const response = await axios.get( URL002 );
+    		console.log( "%o", response.data);
+            
+            let text = "<ul>";
+            text += "<li>" + "Id:" + response.data.id + "</li>";
+            text += "<li>" + "Name:" + response.data.name + "</li>";
+            let itemLen = response.data.types.length;
+            for (let i = 0; i < itemLen; i++) {
+                text += "<li>" + "Types:" + response.data.types[i] + "</li>";
+            } 
+            text += "</ul>";
+            console.log(text);
+            var x = document.getElementById( 'theDataRight' );
+            x.innerHTML = text;
+        } catch (error) {
+		    console.error(error);
+	    }
+	}
+
 	
     </script>
 
@@ -47,12 +67,33 @@
 
 <body>
     <button type="button" onclick="getPokedex()">Get pokedex</button>
+    <button type="button" onclick="getPokemonDetails()">Get pokemon details</button>
 
     <h1>Pokedex</h1>
         <h3>Details</h3>
         <p id=theData> </p>
-        <p id=theData2> </p>
-        <p id=theData3> </p>
-</body>
+
+        <div class="container" style="display: flex;">
+            <div style="width: 50%; background: aliceblue;"> 
+                List View 
+                <p id=theDataLeft> </p>
+            </div>
+            <div style="flex-grow: 1; background: antiquewhite;"> 
+                Detail View
+                <p id=theDataRight> </p>
+            </div>
+        </div>
+        
+        <!-- <div style="width: 100%;">
+            <div style="width: 50%; height: 100px; float: left; background: aliceblue;"> 
+                List View 
+                <p id=theDataLeft> </p>
+            </div>
+            <div style="margin-left: 50%; height: 100px; background: antiquewhite;"> 
+                Detail View
+                <p id=theDataRight> </p>
+            </div>
+        </div> -->
+    </body>
 
 </html>
