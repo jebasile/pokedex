@@ -27,6 +27,8 @@ curl -kX 'GET'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomai
 
 curl -kX 'GET'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon?limit=3&offset=5'   -H 'accept: application/json'
 
+curl -kX 'POST'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon/002/unfavorite'
+
 Make sure these are vanilla single quotes
 ```
 
