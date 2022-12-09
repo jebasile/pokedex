@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Pokedex</title>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="pokedexView.js"></script>
+    <script src="pokedexDetail.js"></script>
+
+</head>
+
+<body>
+    <button type="button" onclick="getPokedex()">Get pokedex</button>
+    <button type="button" onclick="getPokemonDetails()">Get pokemon details</button>
+    <button type="button" onclick="postFavoritePokemon('002')">Favorite</button>
+    <button type="button" onclick="postUnfavoritePokemon('002')">Unfavorite</button>
+    <button type="button" onclick="postFavoritePokemon('002')"><img src="https://img.pokemondb.net/artwork/ivysaur.jpg"></button>
+
+    <h1>Pokedex</h1>
+        <h3>Details</h3>
+        <div class="container" style="display: flex;">
+           <p id=theData> </p>
+        </div>
+        
+    </body>
+
+</html>
