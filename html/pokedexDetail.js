@@ -19,6 +19,12 @@ async function getPokemonDetails() {
             text += "<li>" + "Types:" + response.data.types[i] + "</li>";
         } 
         text += "<li>" + "Favorite:" + response.data.isFavorite + "</li>";
+        text += "<li>" + "Weight:" + response.data.weight.minimum + " " + response.data.weight.maximum + "</li>";
+        text += "<li>" + "Height:" + response.data.height.minimum + " " + response.data.height.maximum + "</li>";
+        let evolLen = response.data.evolutions.length;
+        for (let i = 0; i < evolLen; i++) {
+            text += "<li>" + "Evolutions:" + response.data.evolutions[i].name + "</li>";
+        } 
         text += "</ul>";
         console.log(text);
         var x = document.getElementById( 'theData' );
