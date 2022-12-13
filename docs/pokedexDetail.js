@@ -5,19 +5,22 @@
 var URL="https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon"
 var URL002="https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon/002"
 
-async function getPokemonDetails() {
+async function getPokemonDetails(id) {
     try {
-        console.log("Got here 3");
-        const response = await axios.get( URL002 );
+        console.log("Got here getPokemonDetails(" + id +")");
+        let idurl = URL + "/" + id;
+        const response = await axios.get( idurl );
         console.log( "%o", response.data);
         
         let text = "<ul>";
         text += "<li>" + "Id:" + response.data.id + "</li>";
         text += "<li>" + "Name:" + response.data.name + "</li>";
         let itemLen = response.data.types.length;
+        let types = "";
         for (let i = 0; i < itemLen; i++) {
-            text += "<li>" + "Types:" + response.data.types[i] + "</li>";
+            types += response.data.types[i] + " ";
         } 
+        text += "<li>" + "Types:" + types + "</li>";
         text += "<li>" + "Favorite:" + response.data.isFavorite + "</li>";
         text += "<li>" + "Weight:" + response.data.weight.minimum + " " + response.data.weight.maximum + "</li>";
         text += "<li>" + "Height:" + response.data.height.minimum + " " + response.data.height.maximum + "</li>";
@@ -34,3 +37,21 @@ async function getPokemonDetails() {
     }
 }
 
+function getPokemonDetailsId() {
+    console.log("Got here getPokemonDetailsId()");
+    const message = document.getElementById("inputIdMsg");
+    message.innerHTML = "";
+    let x = document.getElementById("inputId").value;
+    try { 
+      if (x == "")  x="002";  // Default id
+      if (isNaN(x)) throw "not a number";
+      //x = Number(x);
+      //if(x < 5)  throw "too low";
+      //if(x > 10)   throw "too high";
+      getPokemonDetails(x);
+    }
+    catch(err) {
+      message.innerHTML = "Input is " + err;
+    }
+  }
+  
