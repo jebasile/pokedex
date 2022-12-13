@@ -23,7 +23,10 @@ async function getPokedex() {
                 types += response.data.items[i].types[j];
                 types += " ";
             }
-            text += "<li>" + response.data.items[i].name + " " + response.data.items[i].id + " " + types + "</li>";
+            text += "<li>" + response.data.items[i].name + " " + response.data.items[i].id + " " + types + 
+            "<button type='button' onclick='postFavoritePokemon(" + response.data.items[i].id + ")'>Favorite</button>" +
+            "<button type='button' onclick='postUnfavoritePokemon(" + response.data.items[i].id + ")'>Unfavorite</button>" +
+            "</li>";
         }
         text += "</ul>";
         console.log(text);
