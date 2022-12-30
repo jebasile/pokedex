@@ -25,6 +25,8 @@ git stash pop
 
 ```file:////Users/jenniferbasile/Documents/GitHub/pokedex/html/pokedex.html```
 
+```https://jebasile.github.io/pokedex/```
+
 ```
 curl -kX 'GET'  'https://q-exercise-api.o64ixruq9hj.us-south.codeengine.appdomain.cloud/api/rest/pokemon/'   -H 'accept: application/json'
 
