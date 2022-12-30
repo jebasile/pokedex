@@ -10,7 +10,14 @@ git config --global user.name "Your Name"
 git config --global user.email you@example.com
 git commit --amend --reset-author
 git push
+```
 
+Show user.name and user.email:
+```
+git config --list
+```
+
+```
 git stash
 git pull
 git stash pop
